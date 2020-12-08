@@ -26,10 +26,19 @@ infobulles{
   background-color: #808080;
   visibility: hidden;
 }
+#AttaqueSpe{
+  display: flex;
+  justify-content: space-around;
+  width: 67%;
+  margin-top: -20px;
+  margin-left: 26%;
+
+}
 Bosses{ 
   display: flex;
   width: 100%;
   justify-content: space-around;
+  align-items: center;
   
 }
 
@@ -41,6 +50,26 @@ Stats {
   height : 25%;
 }
 
+.hugo{
+  color: #FF0000;
+  font-weight: bold;
+  background-color: #808080;
+}
+.tom{
+  color: #008000;
+  font-weight: bold;
+  background-color: #808080;
+}
+.antoine{
+  color: #0000FF;
+  font-weight: bold;
+  background-color: #808080;
+}
+.adrien{
+  color: #FFFF00;
+  font-weight: bold;
+  background-color: #808080;
+}
 name{
   font-size: 25px;
   text-decoration: underline;
@@ -49,7 +78,6 @@ name{
   justify-content: space-around;
   height: 100%;
   width: 80%;
-  color :  black;
   margin-left : 35px;
   font-weight: bold;
   background-color: grey;

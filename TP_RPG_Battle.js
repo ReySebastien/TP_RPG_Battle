@@ -7,10 +7,14 @@ var attaqueSpe = document.getElementById("BoutonAttaqueSpe")
 var cibleHTML = document.getElementById("boutonHTML")
 var cibleCSS = document.getElementById("boutonCSS")
 var ciblesJAVA = document.getElementById("boutonJAVA")
+var persHugo = document.getElementById("boutonHugo")
+var persTom = document.getElementById("boutonTom")
+var persAntoine = document.getElementById("boutonAntoine") 
+var persAdrien = document.getElementById("boutonAdrien")    
 var hpMonstreHTML = 200
 var hpMonstreCSS = 150
 var hpMonstreJAVA = 250
-var hpCible = 
+
 
     
 monstre1.onmouseover = function(){
@@ -50,7 +54,40 @@ ciblesJAVA.onclick = function(){
   document.getElementById("infobulleMonstre2").style.visibility = "hidden"
   document.getElementById("infobulleMonstre3").style.visibility = "visible"
 }  
-attaquer.onclick = function(){
-  hpCible()
-}    
-    
+
+persHugo.onclick = function(){
+  document.getElementById("BoutonAttaquer").style.visibility = "visible"
+  document.getElementById("BoutonDefense").style.visibility = "visible"
+  document.getElementById("BoutonPoison").style.visibility = "visible" 
+  document.getElementById("BoutonFeu").style.visibility = "hidden"
+  document.getElementById("BoutonSoin").style.visibility = "hidden"
+  document.getElementById("BoutonElec").style.visibility = "hidden"
+} 
+
+persTom.onclick = function(){
+  document.getElementById("BoutonAttaquer").style.visibility = "visible"
+  document.getElementById("BoutonDefense").style.visibility = "visible"
+  document.getElementById("BoutonPoison").style.visibility = "hidden" 
+  document.getElementById("BoutonFeu").style.visibility = "visible"
+  document.getElementById("BoutonSoin").style.visibility = "hidden"
+  document.getElementById("BoutonElec").style.visibility = "hidden"
+} 
+
+persAntoine.onclick = function(){
+  document.getElementById("BoutonAttaquer").style.visibility = "visible"
+  document.getElementById("BoutonDefense").style.visibility = "visible"
+  document.getElementById("BoutonPoison").style.visibility = "hidden" 
+  document.getElementById("BoutonFeu").style.visibility = "hidden"
+  document.getElementById("BoutonSoin").style.visibility = "visible"
+  document.getElementById("BoutonElec").style.visibility = "hidden"
+} 
+
+persAdrien.onclick = function(){
+  document.getElementById("BoutonAttaquer").style.visibility = "visible"
+  document.getElementById("BoutonDefense").style.visibility = "visible"
+  document.getElementById("BoutonPoison").style.visibility = "hidden" 
+  document.getElementById("BoutonFeu").style.visibility = "hidden"
+  document.getElementById("BoutonSoin").style.visibility = "hidden"
+  document.getElementById("BoutonElec").style.visibility = "visible"
+}   
+  

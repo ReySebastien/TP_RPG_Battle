@@ -1,8 +1,9 @@
 <html>
             <head>
                 <title>HTML, CSS and JavaScript demo</title>
-                <link rel="stylesheet" type="text/css" href="../CSS/Dragon_quest.css">
-            </head>
+                <link rel="stylesheet" type="text/css" href="TP_RPG_Battle.css">
+            <link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
       <body>
 <!-- Start your code here -->
       <Top> 
@@ -16,6 +17,7 @@
           <div class="infobulle" id="infobulleMonstre1"> HP 200 HTML </div> 
           <div class="infobulle" id="infobulleMonstre2"> HP 150 CSS </div> 
           <div class="infobulle" id="infobulleMonstre3"> HP 250 JAVA </div> 
+          
         </infobulles>
           <Bosses>
             <div id="Monstre1"> <img src="https://freepngimg.com/thumb/sprite/87702-monster-profession-character-fictional-game-video-cartoon.png" width="150px"/> </div>
@@ -23,21 +25,25 @@
             <div id="Monstre3"> <img src="https://freepngimg.com/thumb/sprite/87702-monster-profession-character-fictional-game-video-cartoon.png" width="150px"/> </div>
           </Bosses>
        </Top>
-        
+        <section class="infobulle" id="AttaqueSpe">
+           <button id="BoutonPoison"> Poison </button>
+           <button id="BoutonFeu"> Feu </button>
+           <button id="BoutonSoin"> Soin </button>
+           <button id="BoutonElec"> Electricite </button>
+        </section>
        <Bottom>  
-         <action>
+         <action class="infobulle">
           <button id="BoutonAttaquer"> Attaquer </button> <button id="BoutonDefense"> Defense </button>
-          <button id="BoutonAttaqueSpe"> Attaque Spe </button>
          </action>
        <Stats> 
          <name> 
-           <div> Hugo </div> <div> Tom </div>
-           <div> Antoine </div> <div> Adrien </div>
+           <button class="hugo" id="boutonHugo"> Hugo </button> <button class="tom" id="boutonTom"> Tom </button>
+           <button class="antoine" id="boutonAntoine"> Antoine </button> <button class="adrien" id="boutonAdrien"> Adrien </button>
          </name>
         
          <health>
-           <div> H 100 </div> <div> H 100 </div>
-           <div> H 150 </div> <div> H 100 </div>
+           <div> H 150 </div> <div> H 150 </div>
+           <div> H 100 </div> <div> H 150 </div>
          </health>
         
          <mana>
@@ -52,5 +58,7 @@
         </Stats>
        </Bottom>
 <!-- End your code here -->
-      </body>
+         <script type="text/javascript" src="TP_RPG_Battle.js"></script>
+      <script type="text/javascript" src="js/script.js"></script>
+</body>
 </html>
