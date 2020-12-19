@@ -11,12 +11,21 @@ var persHugo = document.getElementById("boutonHugo")
 var persTom = document.getElementById("boutonTom")
 var persAntoine = document.getElementById("boutonAntoine") 
 var persAdrien = document.getElementById("boutonAdrien")    
-var hpMonstreHTML = 200
-var hpMonstreCSS = 150
-var hpMonstreJAVA = 250
+var manaHugo = 80
+var manaTom = 80
+var manaAntoine = 80
+var manaAdrien = 80
+var joueur = 1
+var attaqueMonstres = [0, 10, 15, 20]
+var attaqueJoueurs = [0, 25, 20, 10, 15]
+var hpMonstres = [0, 200, 150, 250]
+var hpJoueurs = [0, 150, 100, 150, 150]
+var dmgPoison = 5
+var dmgFeu = 5
+var dmgElec = 5
+var soin = 20
+var cibleJoueurs = 0
 
-
-    
 monstre1.onmouseover = function(){
   document.getElementById("infobulleMonstre1").style.visibility = "visible" ;
 }
@@ -42,18 +51,24 @@ cibleHTML.onclick = function(){
   document.getElementById("infobulleMonstre1").style.visibility = "visible" 
   document.getElementById("infobulleMonstre2").style.visibility = "hidden"
   document.getElementById("infobulleMonstre3").style.visibility = "hidden"
+  cibleJoueurs = 1
+  
 }  
 
 cibleCSS.onclick = function(){
   document.getElementById("infobulleMonstre1").style.visibility = "hidden" 
   document.getElementById("infobulleMonstre2").style.visibility = "visible"
   document.getElementById("infobulleMonstre3").style.visibility = "hidden"
-}
+  cibleJoueurs = 2
+}  
+
 ciblesJAVA.onclick = function(){
-   document.getElementById("infobulleMonstre1").style.visibility = "hidden" 
+  document.getElementById("infobulleMonstre1").style.visibility = "hidden" 
   document.getElementById("infobulleMonstre2").style.visibility = "hidden"
   document.getElementById("infobulleMonstre3").style.visibility = "visible"
+  cibleJoueurs = 3
 }  
+  
 
 persHugo.onclick = function(){
   document.getElementById("BoutonAttaquer").style.visibility = "visible"
@@ -90,4 +105,36 @@ persAdrien.onclick = function(){
   document.getElementById("BoutonSoin").style.visibility = "hidden"
   document.getElementById("BoutonElec").style.visibility = "visible"
 }   
-  
+
+function toursJoueurs(joueur){
+  document.getElementById("BoutonPoison").style.visibility = "hidden" 
+  document.getElementById("BoutonFeu").style.visibility = "hidden"
+  document.getElementById("BoutonSoin").style.visibility = "hidden"
+  document.getElementById("BoutonElec").style.visibility = "hidden"
+  if (joueur == 1){
+    document.getElementById("BoutonPoison").style.visibility = "visible"
+  }
+  if (joueur == 2){
+    document.getElementById("BoutonFeu").style.visibility = "visible"
+  }
+  if (joueur == 3){
+    document.getElementById("BoutonSoin").style.visibility = "visible"
+  }
+  if (joueur == 4){
+    document.getElementById("BoutonElec").style.visibility = "visible"
+  }
+}
+
+attaquer.onclick = function(){
+  joueur ++
+  if (joueur == 5){
+    joueur = 1
+  }
+  toursJoueurs(joueur)
+
+  hpMonstres[cibleJoueurs] -= attaqueJoueurs[joueur]
+  document.getElementById("PVHTML").innerHTML = " "+hpMonstres[1]+" "////
+  document.getElementById("PVCSS").innerHTML = " "+hpMonstres[2]+" "
+  document.getElementById("PVJAVA").innerHTML = " "+hpMonstres[3]+" "
+}
+

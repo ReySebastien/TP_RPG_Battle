@@ -10,15 +10,14 @@ Top{
   border: 2px solid red;
   width: 100;
   background-color: #808080;
-  
 }
+
 infobulles{
   display: flex;
   width: 100%;
   justify-content: space-around;
-
-  
 }
+
 .infobulle{
   display: flex;
   border: 2px solid red;
@@ -32,14 +31,13 @@ infobulles{
   width: 67%;
   margin-top: -20px;
   margin-left: 26%;
-
 }
+
 Bosses{ 
   display: flex;
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  
 }
 
 Stats {
@@ -55,21 +53,25 @@ Stats {
   font-weight: bold;
   background-color: #808080;
 }
+
 .tom{
   color: #008000;
   font-weight: bold;
   background-color: #808080;
 }
+
 .antoine{
   color: #0000FF;
   font-weight: bold;
   background-color: #808080;
 }
+
 .adrien{
   color: #FFFF00;
   font-weight: bold;
   background-color: #808080;
 }
+
 name{
   font-size: 25px;
   text-decoration: underline;
@@ -111,6 +113,10 @@ mana{
   background-color: grey;
 }
 
+#BoutonPoison{
+  visibility: visible;
+}
+
 level{
   font-size: 20px;
   border: 2px solid brown;
@@ -124,11 +130,13 @@ level{
   font-weight: bold;
   background-color : grey;
 }
+
 button{
   height: 30px;
   width: 100px;
   font-weight: bold;
 }
+
 action{
   font-size: 30px;
   border: 2px solid red;
@@ -137,6 +145,7 @@ action{
   flex-direction: column;
   color: black;
 }
+
 Bottom{
   display: flex;
   align-items: flex-end;
@@ -152,7 +161,6 @@ space{
 body{
   background-image: url("https://cdn.gamedevmarket.net/wp-content/uploads/20191203193538/8b741662764b0e71bf113859b6fe2ee84ee6d14f.jpg");
   background-repeat: no-repeat;
-
   height: 400px;
   width: 700px;
 }
