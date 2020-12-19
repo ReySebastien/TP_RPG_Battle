@@ -136,5 +136,15 @@ attaquer.onclick = function(){
   document.getElementById("PVHTML").innerHTML = " "+hpMonstres[1]+" "////
   document.getElementById("PVCSS").innerHTML = " "+hpMonstres[2]+" "
   document.getElementById("PVJAVA").innerHTML = " "+hpMonstres[3]+" "
+
+  if (document.getElementById("PVHTML")<=0){
+    document.getElementById("Monstre1").style.visibility = "hidden"
+  }
+  if (document.getElementById("PVCSS")<=0) {
+    document.getElementById("Monstre2").style.visibility = "hidden"
+  }  
+  if (document.getElementById("PVJAVA")<=0){
+    document.getElementById("Monstre3").style.visibility = "hidden"
+  }
 }
 
