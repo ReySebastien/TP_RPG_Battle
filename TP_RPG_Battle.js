@@ -137,14 +137,10 @@ attaquer.onclick = function(){
   document.getElementById("PVCSS").innerHTML = " "+hpMonstres[2]+" "
   document.getElementById("PVJAVA").innerHTML = " "+hpMonstres[3]+" "
 
-  if (document.getElementById("PVHTML")<=0){
-    document.getElementById("Monstre1").style.visibility = "hidden"
-  }
-  if (document.getElementById("PVCSS")<=0) {
-    document.getElementById("Monstre2").style.visibility = "hidden"
-  }  
-  if (document.getElementById("PVJAVA")<=0){
-    document.getElementById("Monstre3").style.visibility = "hidden"
+  if (hpMonstres[cibleJoueurs] <= 0) {
+    monstre1.style.visibility = "hidden"
+    monstre2.style.visibility = "hidden"
+    monstre3.style.visibility = "hidden"
   }
 }
 
