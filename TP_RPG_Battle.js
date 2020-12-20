@@ -3,6 +3,10 @@ var monstre2 = document.getElementById("Monstre2")
 var monstre3 = document.getElementById("Monstre3")
 var attaquer = document.getElementById("BoutonAttaquer")
 var defense = document.getElementById("BoutonDefense")
+var poison = document.getElementById("BoutonPoison")
+var feu = document.getElementById("BoutonFeu")
+var soin = document.getElementById("BoutonSoin")
+var elec = document.getElementById("BoutonElec")
 var attaqueSpe = document.getElementById("BoutonAttaqueSpe")
 var cibleHTML = document.getElementById("boutonHTML")
 var cibleCSS = document.getElementById("boutonCSS")
@@ -25,6 +29,7 @@ var dmgFeu = 5
 var dmgElec = 5
 var soin = 20
 var cibleJoueurs = 0
+var tour = 0
 
 monstre1.onmouseover = function(){
   document.getElementById("infobulleMonstre1").style.visibility = "visible" ;
@@ -129,6 +134,7 @@ attaquer.onclick = function(){
   joueur ++
   if (joueur == 5){
     joueur = 1
+    tour ++
   }
   toursJoueurs(joueur)
 
@@ -157,4 +163,26 @@ attaquer.onclick = function(){
     document.getElementById("Victoire").style.visibility = "visible"
   }
 }
+
+poison.onclick = function(){
+  hpMonstres[cibleJoueurs] -= dmgPoison
+  document.getElementById("PVHTML").innerHTML = " "+hpMonstres[1]+" "////
+  document.getElementById("PVCSS").innerHTML = " "+hpMonstres[2]+" "
+  document.getElementById("PVJAVA").innerHTML = " "+hpMonstres[3]+" "
+}
+
+feu.onclick = function(){
+  hpMonstres[cibleJoueurs] -= dmgFeu
+  document.getElementById("PVHTML").innerHTML = " "+hpMonstres[1]+" "////
+  document.getElementById("PVCSS").innerHTML = " "+hpMonstres[2]+" "
+  document.getElementById("PVJAVA").innerHTML = " "+hpMonstres[3]+" "
+}
+
+elec.onclick = function(){
+  hpMonstres[cibleJoueurs] -= dmgElec
+  document.getElementById("PVHTML").innerHTML = " "+hpMonstres[1]+" "////
+  document.getElementById("PVCSS").innerHTML = " "+hpMonstres[2]+" "
+  document.getElementById("PVJAVA").innerHTML = " "+hpMonstres[3]+" "
+}
+
 
