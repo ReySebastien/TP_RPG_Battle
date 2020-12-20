@@ -124,6 +124,7 @@ mana{
   width: 20%;
   justify-content: center;
   margin-left: 350px;
+  margin-top: -30px;
   font-weight: bold;
   font-size: 25;
   visibility: hidden;

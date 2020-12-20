@@ -140,14 +140,21 @@ attaquer.onclick = function(){
   if (hpMonstres[1] <= 0) {
     monstre1.style.visibility = "hidden"
     document.getElementById("infobulleMonstre1").style.visibility = "hidden"
+    document.getElementById("boutonHTML").style.visibility = "hidden"
   }
   if (hpMonstres[2] <= 0) {
     monstre2.style.visibility = "hidden"
     document.getElementById("infobulleMonstre2").style.visibility = "hidden"
+    document.getElementById("boutonCSS").style.visibility = "hidden"
   }
   if (hpMonstres[3] <= 0) {
     monstre3.style.visibility = "hidden"
     document.getElementById("infobulleMonstre3").style.visibility = "hidden"
+    document.getElementById("boutonJAVA").style.visibility = "hidden"
+  }
+
+  if (hpMonstres[1, 2, 3] <= 0) {
+    document.getElementById("Victoire").style.visibility = "visible"
   }
 }
 
