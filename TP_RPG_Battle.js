@@ -23,12 +23,14 @@ var joueur = 1
 var attaqueMonstres = [0, 10, 15, 20]
 var attaqueJoueurs = [0, 25, 20, 10, 15]
 var hpMonstres = [0, 200, 150, 250]
-var hpJoueurs = [0, 150, 100, 150, 150]
+var hpJoueurs = [0, 150, 150, 150, 150]
 var dmgPoison = 5
 var dmgFeu = 5
 var dmgElec = 5
 var soin = 20
 var cibleJoueurs = 0
+var cibleMonstres = 0
+var monstre = 0
 var tour = 0
 
 monstre1.onmouseover = function(){
@@ -118,23 +120,39 @@ function toursJoueurs(joueur){
   document.getElementById("BoutonElec").style.visibility = "hidden"
   if (joueur == 1){
     document.getElementById("BoutonPoison").style.visibility = "visible"
+    if (manaHugo <= 0) {
+   document.getElementById("BoutonPoison").style.visibility = "hidden"
+   }   
   }
   if (joueur == 2){
     document.getElementById("BoutonFeu").style.visibility = "visible"
+    if (manaTom <= 0) {
+   document.getElementById("BoutonFeu").style.visibility = "hidden"
+   }
   }
   if (joueur == 3){
     document.getElementById("BoutonSoin").style.visibility = "visible"
   }
   if (joueur == 4){
     document.getElementById("BoutonElec").style.visibility = "visible"
+    if (manaAdrien <= 0) {
+   document.getElementById("BoutonElec").style.visibility = "hidden"   
+ }
   }
 }
 
 attaquer.onclick = function(){
   joueur ++
   if (joueur == 5){
-    joueur = 1
     tour ++
+    monstre ++
+    cibleMonstres = joueur = Math.floor(Math.random() * 4) + 1
+    hpJoueurs[cibleMonstres] -= attaqueMonstres[monstre]
+    document.getElementById("PVHUGO").innerHTML = " "+hpJoueurs[1]+" "
+    document.getElementById("PVTOM").innerHTML = " "+hpJoueurs[2]+" "
+    document.getElementById("PVANTOINE").innerHTML = " "+hpJoueurs[3]+" "
+    document.getElementById("PVADRIEN").innerHTML = " "+hpJoueurs[4]+" "
+    joueur = 1
   }
   toursJoueurs(joueur)
 
@@ -161,28 +179,48 @@ attaquer.onclick = function(){
 
   if (hpMonstres[1, 2, 3] <= 0) {
     document.getElementById("Victoire").style.visibility = "visible"
+    document.getElementById("BoutonAttaquer").style.visibility = "hidden"
+    document.getElementById("BoutonDefense").style.visibility = "hidden"
+    document.getElementById("BoutonPoison").style.visibility = "hidden" 
+
   }
 }
 
 poison.onclick = function(){
   hpMonstres[cibleJoueurs] -= dmgPoison
+  manaHugo -= 10
   document.getElementById("PVHTML").innerHTML = " "+hpMonstres[1]+" "////
   document.getElementById("PVCSS").innerHTML = " "+hpMonstres[2]+" "
   document.getElementById("PVJAVA").innerHTML = " "+hpMonstres[3]+" "
+  document.getElementById("MANAHUGO").innerHTML = " "+manaHugo+" "
+  if (manaHugo <= 0) {
+   document.getElementById("BoutonPoison").style.visibility = "hidden"   
+  }
 }
 
 feu.onclick = function(){
   hpMonstres[cibleJoueurs] -= dmgFeu
+  manaTom -= 10
   document.getElementById("PVHTML").innerHTML = " "+hpMonstres[1]+" "////
   document.getElementById("PVCSS").innerHTML = " "+hpMonstres[2]+" "
   document.getElementById("PVJAVA").innerHTML = " "+hpMonstres[3]+" "
+  document.getElementById("MANATOM").innerHTML = " "+manaTom+" "
+  if (manaTom <= 0) {
+   document.getElementById("BoutonFeu").style.visibility = "hidden"
+   }   
+
 }
 
 elec.onclick = function(){
   hpMonstres[cibleJoueurs] -= dmgElec
+  manaAdrien -= 10
   document.getElementById("PVHTML").innerHTML = " "+hpMonstres[1]+" "////
   document.getElementById("PVCSS").innerHTML = " "+hpMonstres[2]+" "
   document.getElementById("PVJAVA").innerHTML = " "+hpMonstres[3]+" "
+  document.getElementById("MANAADRIEN").innerHTML = " "+manaAdrien+" "
+  if (manaAdrien <= 0) {
+   document.getElementById("BoutonElec").style.visibility = "hidden"   
+ }
 }
 
 
