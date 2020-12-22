@@ -32,6 +32,7 @@ var cibleJoueurs = 0
 var cibleMonstres = 0
 var monstre = 0
 var tour = 0
+var DefPerso = 10
 
 monstre1.onmouseover = function(){
   document.getElementById("infobulleMonstre1").style.visibility = "visible" ;
@@ -120,38 +121,75 @@ function toursJoueurs(joueur){
   document.getElementById("BoutonElec").style.visibility = "hidden"
   if (joueur == 1){
     document.getElementById("BoutonPoison").style.visibility = "visible"
+    document.getElementById("BoutonDefense").style.visibility = "visible"
     if (manaHugo <= 0) {
-   document.getElementById("BoutonPoison").style.visibility = "hidden"
+      document.getElementById("BoutonPoison").style.visibility = "hidden"
    }   
   }
   if (joueur == 2){
     document.getElementById("BoutonFeu").style.visibility = "visible"
+    document.getElementById("BoutonDefense").style.visibility = "visible"
     if (manaTom <= 0) {
-   document.getElementById("BoutonFeu").style.visibility = "hidden"
+      document.getElementById("BoutonFeu").style.visibility = "hidden"
    }
   }
   if (joueur == 3){
     document.getElementById("BoutonSoin").style.visibility = "visible"
+    document.getElementById("BoutonDefense").style.visibility = "visible"
   }
   if (joueur == 4){
     document.getElementById("BoutonElec").style.visibility = "visible"
+    document.getElementById("BoutonDefense").style.visibility = "visible"
     if (manaAdrien <= 0) {
-   document.getElementById("BoutonElec").style.visibility = "hidden"   
+      document.getElementById("BoutonElec").style.visibility = "hidden"   
  }
   }
 }
 
 attaquer.onclick = function(){
   joueur ++
+  if (hpJoueurs[1]<=0) {
+    joueur ++
+  }
+  if (hpJoueurs[2]<=0) {
+    joueur ++
+  }
+  if (hpJoueurs[3]<=0) {
+    joueur ++
+  }
+  if (hpJoueurs[4]<=0) {
+    joueur ++
+  }
   if (joueur == 5){
     tour ++
     monstre ++
-    cibleMonstres = joueur = Math.floor(Math.random() * 4) + 1
+    if (hpMonstres[1]>0) {
+    cibleMonstres = Math.floor(Math.random() * 3) + 1
     hpJoueurs[cibleMonstres] -= attaqueMonstres[monstre]
-    document.getElementById("PVHUGO").innerHTML = " "+hpJoueurs[1]+" "
-    document.getElementById("PVTOM").innerHTML = " "+hpJoueurs[2]+" "
-    document.getElementById("PVANTOINE").innerHTML = " "+hpJoueurs[3]+" "
-    document.getElementById("PVADRIEN").innerHTML = " "+hpJoueurs[4]+" "
+    document.getElementById("PVHUGO").innerHTML = hpJoueurs[1]
+    document.getElementById("PVTOM").innerHTML = hpJoueurs[2]
+    document.getElementById("PVANTOINE").innerHTML = hpJoueurs[3]
+    document.getElementById("PVADRIEN").innerHTML = hpJoueurs[4]
+  }
+    monstre++
+    if (hpMonstres[2]>0) {
+    cibleMonstres = Math.floor(Math.random() * 3) + 1
+    hpJoueurs[cibleMonstres] -= attaqueMonstres[monstre]
+    document.getElementById("PVHUGO").innerHTML = hpJoueurs[1]
+    document.getElementById("PVTOM").innerHTML = hpJoueurs[2]
+    document.getElementById("PVANTOINE").innerHTML = hpJoueurs[3]
+    document.getElementById("PVADRIEN").innerHTML = hpJoueurs[4]
+  }
+    monstre++
+    if (hpMonstres[3]>0) {
+    cibleMonstres = Math.floor(Math.random() * 3) + 1
+    hpJoueurs[cibleMonstres] -= attaqueMonstres[monstre]
+    document.getElementById("PVHUGO").innerHTML = hpJoueurs[1]
+    document.getElementById("PVTOM").innerHTML = hpJoueurs[2]
+    document.getElementById("PVANTOINE").innerHTML = hpJoueurs[3]
+    document.getElementById("PVADRIEN").innerHTML = hpJoueurs[4]
+  }
+    monstre = 0
     joueur = 1
   }
   toursJoueurs(joueur)
@@ -177,7 +215,7 @@ attaquer.onclick = function(){
     document.getElementById("boutonJAVA").style.visibility = "hidden"
   }
 
-  if (hpMonstres[1, 2, 3] <= 0) {
+  if (hpMonstres[1] <= 0 && hpMonstres[2] <=0 && hpMonstres[3] <=0) {
     document.getElementById("Victoire").style.visibility = "visible"
     document.getElementById("BoutonAttaquer").style.visibility = "hidden"
     document.getElementById("BoutonDefense").style.visibility = "hidden"
@@ -221,6 +259,11 @@ elec.onclick = function(){
   if (manaAdrien <= 0) {
    document.getElementById("BoutonElec").style.visibility = "hidden"   
  }
+}
+
+defense.onclick = function(){
+  hpJoueurs[joueur] += DefPerso
+  document.getElementById("BoutonDefense").style.visibility = "hidden"
 }
 
 
