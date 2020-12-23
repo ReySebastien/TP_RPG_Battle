@@ -220,8 +220,25 @@ attaquer.onclick = function(){
     document.getElementById("BoutonAttaquer").style.visibility = "hidden"
     document.getElementById("BoutonDefense").style.visibility = "hidden"
     document.getElementById("BoutonPoison").style.visibility = "hidden" 
+    document.getElementById("BoutonPoison").style.visibility = "hidden" 
+    document.getElementById("BoutonFeu").style.visibility = "hidden"
+    document.getElementById("BoutonSoin").style.visibility = "hidden"
+    document.getElementById("BoutonElec").style.visibility = "hidden"
 
   }
+
+if (hpJoueurs[1] <= 0 && hpJoueurs[2] <=0 && hpJoueurs[3] <=0 && hpJoueurs[4] <= 0) {
+    document.getElementById("Defaite").style.visibility = "visible"
+    document.getElementById("BoutonAttaquer").style.visibility = "hidden"
+    document.getElementById("BoutonDefense").style.visibility = "hidden"
+    document.getElementById("BoutonPoison").style.visibility = "hidden" 
+    document.getElementById("BoutonPoison").style.visibility = "hidden" 
+    document.getElementById("BoutonFeu").style.visibility = "hidden"
+    document.getElementById("BoutonSoin").style.visibility = "hidden"
+    document.getElementById("BoutonElec").style.visibility = "hidden"
+
+  }
+
 }
 
 poison.onclick = function(){
