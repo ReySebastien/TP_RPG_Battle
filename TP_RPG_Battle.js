@@ -232,7 +232,6 @@ if (hpJoueurs[1] <= 0 && hpJoueurs[2] <=0 && hpJoueurs[3] <=0 && hpJoueurs[4] <=
     document.getElementById("BoutonAttaquer").style.visibility = "hidden"
     document.getElementById("BoutonDefense").style.visibility = "hidden"
     document.getElementById("BoutonPoison").style.visibility = "hidden" 
-    document.getElementById("BoutonPoison").style.visibility = "hidden" 
     document.getElementById("BoutonFeu").style.visibility = "hidden"
     document.getElementById("BoutonSoin").style.visibility = "hidden"
     document.getElementById("BoutonElec").style.visibility = "hidden"
